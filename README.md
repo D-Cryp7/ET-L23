@@ -2,7 +2,7 @@
 
 This repository contains a Qiskit implementation of two different Frame-Based Reconciliation Quantum Key Distribution protocols:
 * _Pure L23_: Implementation of Lizama et al. article: _Reverse Reconciliation for Optimal Error Correction in Quantum Key Distribution_, without the _Auxiliary Algorithm 2_ for error correction [1].
-* _ET-L23_: Implementation of an Error-Tolerant version of L23.
+* _Error-Tolerant L23_: Implementation of an Error-Tolerant version of L23 [2].
 
 ## Success probability of L23
 
@@ -48,4 +48,5 @@ where "$?$" symbol means a random quantum state. Then, Alice computes all the po
 | 100%                     | 75%          |
 
 ## References
-[1] Luis Adrian Lizama-Perez. Reverse reconciliation for optimal error correction in quantum key distribution. Symmetry, 15(3), 2023.
+[1] Luis Adrian Lizama-Perez. Reverse reconciliation for optimal error correction in quantum key distribution. Symmetry, 15(3), 2023.  
+[2] Submitted to IEEE Quantum Week 2024.
