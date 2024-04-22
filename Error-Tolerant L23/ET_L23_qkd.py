@@ -9,9 +9,9 @@ from bob import Bob
 backend = Aer.get_backend("qasm_simulator")
 
 class QKD:
-    def __init__(self, bits, rounds = 2, depolarize_probability = 0):
+    def __init__(self, bits, rounds = 2, depolarize_probability = 0, efficient = False):
         self.bits = bits
-        self.alice = Alice(self.generate_random_bits, self.generate_random_basis)
+        self.alice = Alice(self.generate_random_bits, self.generate_random_basis, depolarize_probability, efficient)
         self.bob = Bob(self.generate_random_basis)
         
         assert rounds == 1 or rounds == 2, "Rounds must be 1 or 2"

@@ -3,7 +3,7 @@ message: "If you use this software, please cite it as below."
 authors:
 - family-names: "Espinoza Figueroa"
   given-names: "Daniel"
-title: "ET-L23- Qiskit implementation of Error-Tolerant L23 Quantum Key Distribution protocol"
+title: "ET-L23 - Qiskit implementation of Error-Tolerant L23 Quantum Key Distribution protocol"
 version: 1.0
 date-released: 2024-04-18
 url: "https://github.com/D-Cryp7/ET-L23"

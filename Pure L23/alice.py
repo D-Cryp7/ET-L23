@@ -1,3 +1,5 @@
+from random import choice
+
 class Alice:
     def __init__(self, bits_generator, basis_generator):
         self.bits = bits_generator()
@@ -49,9 +51,9 @@ class Alice:
             self.INFO.append((len(f1) + len(f5), len(L1)))
         
         if f1:
-            pivot = f1[0][0]
+            pivot = choice(f1)[0]
         elif f5:
-            pivot = f5[0][1]
+            pivot = choice(f5)[1]
         else:
             return False
 

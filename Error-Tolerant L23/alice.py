@@ -1,9 +1,11 @@
 class Alice:
-    def __init__(self, bits_generator, basis_generator):
+    def __init__(self, bits_generator, basis_generator, depolarize_probability, efficient):
         self.bits = bits_generator()
         self.basis = basis_generator()
-        self.shared_secret = ""
+        self.shared_secret = []
         self.INFO = []
+        self.depolarize_probability = depolarize_probability
+        self.efficient = efficient
         
     def generate_states_data(self, results):
         self.states_data = {}
@@ -57,6 +59,14 @@ class Alice:
             elif self.is_f5_frame(L1[i]):
                 pivots.append(L1[i][1])
                 
+        if not pivots:
+            return False
+        
+        if self.depolarize_probability == 0:
+            pivots = pivots[:1]
+        elif self.efficient:
+            pivots = pivots[:10]
+            
         possible_secrets = [ [-1] * len(L1) for _ in range(len(pivots)) ]
         
         if L1:
@@ -74,5 +84,5 @@ class Alice:
             possible_secrets[count] = ''.join(possible_secrets[count])
             count += 1
 
-        self.shared_secret = possible_secrets
+        self.shared_secret.append(possible_secrets)
         return True
